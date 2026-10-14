@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADOÇÃO DE PETS</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #cbe7ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    h1 {
+        color: #333;
+    }
+    input {
+        margin: 10px 0;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <h1>Sistema de adoção de Pets</h1>
+    <input id="nome" placeholder="Digite seu nome">
+    <button onclick="enviar()">Enviar</button>
+    <p id="resultado"></p>
+    <input id="number" placeholder="Digite sua idade">
+    <button onclick="enviar()">Enviar</button>
+    <p id="resultado"></p>
+    <input type="text" placeholder="Ex: 1200">
+    <button onclick="enviar()">Enviar</button>
+    <p id="resultado"></p>
+
+<h2>Sistema de Avaliação</h2>
+<button onclick="avaliarCandidato()">Fazer cadastro</button>
+<script src="script.js"></script>
+
+</body>
+</html>

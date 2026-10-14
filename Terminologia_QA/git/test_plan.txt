@@ -1,0 +1,35 @@
+Plano de Testes: Cadastro de Pedido - Delivery
+
+Escopo:
+- Testar o cadastro de um pedido para entrega, da seleção dos produtos à confirmação.
+- Validar disponibilidade, quantidades, preços, cupons, taxas e valor total.
+- Verificar endereço de entrega, área atendida, instruções e opções de pagamento.
+- Cobrir pedidos válidos, dados ausentes ou inválidos, produto indisponível, pagamento recusado e falhas de conexão.
+- Não contempla preparo, despacho ou acompanhamento logístico após a confirmação.
+
+Estratégia:
+- Executar testes funcionais positivos, negativos e de regressão em ambiente de homologação.
+- Conferir campos obrigatórios, validações e mensagens apresentadas ao usuário.
+- Comparar o resumo do pedido com os valores e dados da confirmação.
+- Variar produtos, endereços, cupons e formas de pagamento.
+- Registrar resultados, evidências e defeitos; retestar correções antes do fechamento.
+- Considerar o fluxo aprovado quando os cenários críticos forem concluídos sem defeitos bloqueadores.
+
+Recursos:
+- Analista de QA e apoio das equipes de desenvolvimento e produto.
+- Aplicação de delivery e ambiente de homologação.
+- Contas de teste, produtos disponíveis e indisponíveis, cupons e endereços válidos e inválidos.
+- Meios de pagamento de teste.
+
+Cronograma:
+- Preparação dos cenários e dados: 1 dia.
+- Execução dos testes: 2 dias.
+- Correções e retestes: 1 a 2 dias, conforme a quantidade de defeitos.
+- Regressão e fechamento: 1 dia.
+
+Ferramentas utilizadas na operação:
+- Aplicação móvel e/ou navegadores compatíveis.
+- Jira ou ferramenta equivalente para acompanhamento de defeitos.
+- Planilha ou ferramenta de gestão de testes para cenários e evidências.
+- Postman ou equivalente para testes de API, quando aplicável.
+- DevTools e logs de homologação para análise de falhas.

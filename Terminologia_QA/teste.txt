@@ -1,0 +1,45 @@
+PASSO A PASSO: ENVIAR UM REPOSITÓRIO PARA O GITHUB
+
+1. Crie uma conta no GitHub (https://github.com) e entre nela.
+2. Instale o Git (https://git-scm.com/downloads) e, se necessário, configure seu nome e e-mail no terminal:
+	git config --global user.name "Seu Nome"
+	git config --global user.email "seu-email@example.com"
+3. Crie um repositório no GitHub:
+	- Clique em “New repository”.
+	- Informe um nome e escolha se será público ou privado.
+	- Para enviar um projeto local existente, é mais simples deixar desmarcadas as opções para criar README, .gitignore ou licença.
+	- Clique em “Create repository” e copie a URL HTTPS ou SSH exibida.
+4. Abra o terminal (ou PowerShell) na pasta do projeto. Por exemplo:
+	cd "C:\caminho\para\seu\projeto"
+5. Inicialize o Git, se essa pasta ainda não for um repositório:
+	git init
+6. Confira os arquivos que serão enviados e crie um arquivo .gitignore para excluir itens que não devem ser publicados, como senhas, chaves, arquivos temporários e dependências geradas.
+7. Adicione os arquivos ao controle de versão:
+	git add .
+8. Crie o primeiro commit:
+	git commit -m "Adiciona arquivos iniciais"
+9. Defina o nome da branch principal como main:
+	git branch -M main
+10. Conecte a pasta local ao repositório do GitHub (substitua a URL pela que copiou):
+	git remote add origin https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+	Se já existir um remote chamado origin, confira-o com `git remote -v` e atualize-o, se necessário:
+	git remote set-url origin https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+11. Envie a branch para o GitHub:
+	git push -u origin main
+12. Se solicitado, autentique-se. Para HTTPS, o GitHub pode abrir uma janela de login; senhas comuns não são aceitas no terminal. Use o fluxo de autenticação indicado pelo GitHub ou um token pessoal. Com SSH, configure uma chave SSH na sua conta.
+13. Atualize a página do repositório no GitHub e confirme que os arquivos apareceram.
+
+PARA ENVIAR ALTERAÇÕES FUTURAS
+1. Edite e salve os arquivos.
+2. Confira o que mudou:
+	git status
+3. Adicione as alterações e crie um commit:
+	git add .
+	git commit -m "Descreve as alterações"
+4. Envie para o GitHub:
+	git push
+
+DICAS
+- Não envie senhas, tokens, chaves privadas ou dados pessoais. Se um segredo já foi enviado, removê-lo do arquivo não basta: revogue-o e gere outro.
+- Se aparecer “remote origin already exists”, use `git remote set-url origin URL` em vez de adicionar o remote novamente.
+- Se o repositório remoto já tiver arquivos e o push for recusado, integre primeiro as alterações remotas, seguindo a mensagem do Git e verificando conflitos antes de enviar novamente.

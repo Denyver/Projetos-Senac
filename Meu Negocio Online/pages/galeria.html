@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Turismo - Meu Negócio Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  .carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .carousel-dots button {
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .carousel-dots button.active {
+    background-color: #333;
+  }
+</style>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.webp" alt="Logo Meu Negócio Online">
+      <h1>Meu Negócio Online</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="pages/index.html">Home</a></li>
+        <li><a href="pages/sobre.html">Sobre Nós</a></li>
+        <li><a href="pages/servicos.html">Serviços</a></li>
+        <li><a href="pages/galeria.html">Galeria</a></li>
+        <li><a href="pages/contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="banner-principal carousel" aria-label="Carrossel de banners de turismo">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="images/travel01.webp" alt="Praia paradisíaca">
+          <div class="banner-texto">
+            <h2>Galeria de Turismo</h2>
+            <p>Explore destinos, experiências e roteiros para sua próxima viagem.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/travel02.png" alt="Turismo cultural">
+          <div class="banner-texto">
+            <h2>Cultura e Aventuras</h2>
+            <p>Descubra paisagens, cidades históricas e experiências únicas.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/travel03.webp" alt="Roteiro de viagem">
+          <div class="banner-texto">
+            <h2>Roteiros Inesquecíveis</h2>
+            <p>Inspire-se com lugares pensados para quem ama viajar e explorar.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+      <button class="carousel-btn next" aria-label="Próximo">›</button>
+      <div class="carousel-dots" aria-hidden="false"></div>
+    </section>
+
+    <section class="galeria-turismo">
+      <h2>Imagens de Turismo</h2>
+      <p>Confira a seleção de fotos e inspirações de viagens, desde praias paradisíacas até rotas culturais e trilhas naturais.</p>
+      <div class="grid-galeria">
+        <article>
+          <img src="images/travel01.webp" alt="Destino de praia tropical">
+          <h3>Praias Tropicais</h3>
+          <p>Momentos de relaxamento em praias de água cristalina e areia branca.</p>
+        </article>
+        <article>
+          <img src="images/travel02.png" alt="Passeio cultural na cidade">
+          <h3>Turismo Cultural</h3>
+          <p>Monumentos, museus e roteiros urbanos com história e autenticidade.</p>
+        </article>
+        <article>
+          <img src="images/travel03.webp" alt="Paisagens naturais e trilhas">
+          <h3>Aventura na Natureza</h3>
+          <p>Trilhas, mirantes e experiências em meio à natureza.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="destinos-destaque">
+      <h2>Destaques da Galeria</h2>
+      <p>Organizamos as melhores paisagens e destinos para você planejar seu próximo roteiro de viagem.</p>
+      <div class="destaques">
+        <article>
+          <h3>Momentos Memoráveis</h3>
+          <p>Veja experiências turísticas que valem a pena registrar e reviver.</p>
+        </article>
+        <article>
+          <h3>Inspiração de Viagem</h3>
+          <p>Deixe-se inspirar por belas imagens e destinos selecionados com carinho.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Meu Negócio Online | Rua Exemplo, 123 - Cidade | contato@meunegocioonline.com.br</p>
+    <p>Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

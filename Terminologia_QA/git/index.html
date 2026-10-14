@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadasstro de Pedido - Delivery</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
+        
+        /* BUG VISUAL 1: O contraste de cores torna o texto ilegível (branco no amarelo claro) */
+        .painel { background-color: #fafad2; color: #ffffff; padding: 25px; border-radius: 8px; max-width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        .grupo-input { margin-bottom: 15px; }
+        input[type="number"], select { width: 100%; padding: 8px; margin-top: 5px; }
+        
+        /* BUG VISUAL 2: O botão tem a cor do texto igual à cor de fundo */
+        .btn-comprar { background-color: #28a745; color: #28a745; border: none; padding: 12px; width: 100%; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <!-- BUG DE GRAMÁTICA 1 -->
+        <h2>Resumo do Pédido</h2>
+        
+        <form>
+            <div class="grupo-input">
+                <label>Valor do Lanche (R$):</label>
+                <input type="number" id="valorLanche" value="0">
+            </div>
+            
+            <div class="grupo-input">
+                <!-- BUG DE GRAMÁTICA 2 -->
+                <label>Bairo para entrega:</label>
+                <select id="valorFrete">
+                    <option value="10">Centro (R$ 10,00)</option>
+                    <option value="15">Zona Sul (R$ 15,00)</option>
+                </select>
+            </div>
+            
+            <div class="grupo-input">
+                <input type="checkbox" id="cupomDesconto"> Adicionar cupom promocional (- R$ 5,00)
+            </div>
+            
+            <!-- BUG DE GRAMÁTICA 3 -->
+            <button type="button" class="btn-comprar" onclick="gerarFatura()">Comfirmar Pédido</button>
+        </form>
+
+        <h3 id="resultado"></h3>
+    </div>
+
+    <script>
+        function gerarFatura() {
+            let lanche = parseFloat(document.getElementById('valorLanche').value);
+            let frete = parseFloat(document.getElementById('valorFrete').value);
+            let aplicouCupom = document.getElementById('cupomDesconto').checked;
+
+            if (lanche < 0) {
+                // BUG DE GRAMÁTICA 4
+                alert("Excessão de Regra: O valor do lanche não pode ser negativo.");
+                return;
+            }
+
+            // BUG DE LÓGICA 1: Multiplicando o valor do lanche pelo frete em vez de somar.
+            let total = lanche * frete;
+
+            if (aplicouCupom) {
+                // BUG DE LÓGICA 2: O cupom está encarecendo o pedido em 5 reais em vez de dar desconto.
+                total = total + 5;
+            }
+
+            // Alterando a cor via JS só para que o aluno consiga ler o resultado quebrado
+            document.getElementById('resultado').style.color = "red";
+            document.getElementById('resultado').innerText = "Total a Pagar: R$ " + total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
